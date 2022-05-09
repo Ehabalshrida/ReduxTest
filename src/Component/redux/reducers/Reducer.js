@@ -1,4 +1,4 @@
-import { INCREASE,DECREASE } from "../actions/action"
+import { INCREASE,DECREASE } from "../actions/types"
 
 const initlalState={
     counter:5
@@ -13,6 +13,10 @@ const initlalState={
  case(DECREASE):
 
  return ({...state,counter:state.counter-1})
+ 
+ case('encreaseByValue'):
+
+ return ({...state,counter:state.counter + action.payload})
 
 default:
 return (state)

@@ -1,18 +1,23 @@
-import { INCREASE,DECREASE } from "../actions/action"
+import { INCREASE,DECREASE } from "../actions/types"
 
 const initlalState={
-    user:"ali"
+    user:10
 }
 
  function reducerCounter2(state=initlalState,action){
 
  switch(action.type){
  case(INCREASE):
- return ({...state,counter:state.counter+1});
+ return ({...state,user:state.user+1});
 
  case(DECREASE):
 
- return ({...state,counter:state.counter-1})
+ return ({...state,user:state.user-1})
+ 
+ case('encreaseByValue'):
+
+ return ({...state,user:state.user + action.payload})
+
 
 default:
 return (state)
